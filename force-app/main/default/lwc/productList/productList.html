@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Selected Product Price" icon-name="custom:custom14">
+        <div class="slds-m-top_small slds-m-bottom_medium">
+             <template for:each={products} for:item="product">
+                <div key={product.id} class="slds-box slds-m-around_medium">
+                    <p>{product.name}</p>
+                    <lightning-button data-id={product.id} label="Select" variant="brand" class="slds-m-left_x-small" onclick={selectProduct}></lightning-button> 
+                </div>
+            </template>
+
+            <template if:true={selectedProduct}>
+                <div class="slds-box slds-m-around_medium slds-theme_shade">
+                    <p>Selected Product:</p>
+                    <p>Name: {selectedProduct.name}</p>
+                    <p>Price: ${selectedProduct.price}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

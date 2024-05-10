@@ -1,0 +1,10 @@
+<template>
+    <h1>Customer List</h1>
+    <ul>
+        <template for:each={customers} for:item="customer">
+            <li key={customer.name}>
+                {customer.name} - Order Status: {customer.orderStatus}
+            </li>
+        </template>
+    </ul>
+</template>
